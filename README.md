@@ -5,13 +5,13 @@ This script estimates the internal system and unknown external inputs parameters
 Matrix V (n x t) must contain the time series data, with rows of V representing variables and columns of V representing observations. This script provides the least squares estimates of the coefficient matrices A (n x n) and the noise covariance matrix C (n x n). Input matrix B (n x p) encodes the spatial profiles of external inputs u (p x t), estimated using Expectation–Maximization-like algorithm and Lasso regularization from the model residuals. The intercept vector is zero, which assumes that the AR process has zero mean. 
 
 # Function parameters:
- 'sensInd' Index of modeled channels/sensors (Default=1:size(V,1)) 
+ 'sensInd': Index of modeled channels/sensors (Default=1:size(V,1)) 
  
- 'numInp' Dimensions of input matrix B (Default=1)
+ 'numInp': Dimensions of input matrix B (Default=1)
  
- 'iterations' Number of Lasso regularization repetitions (Default=25)
+ 'iterations': Number of Lasso regularization repetitions (Default=25)
  
- 'Reg_Fact' Regularization factor (Default=0.5)
+ 'Reg_Fact': Regularization factor (Default=0.5)
 
 # Function dependencies: 
  System matrix A is estimated using ARfit package:(https://github.com/tapios/arfit)
