@@ -1,6 +1,6 @@
 This script estimates the internal system and unknown external inputs parameters of a linear time-invariant dynamical system from the user-provided time series (i.e., outputs of the LTI system), using the algorithm proposed in Ashourvan et al. 2020 ("A dynamical systems framework to uncover the drivers of large-scale cortical activity"). Specifically, LTI_BU_Est.m function estimates parameters of a first-order multivariate AR model: 
 
-  V(:,k) = A x V(:,k-1) + B x u(:,k-1) + noise(C),
+  V(:,k) = AV(:,k-1) + Bu(:,k-1) + noise(C),
 
 Matrix V (n x t) must contain the time series data, with rows of V representing variables and columns of V representing observations. This script provides the least squares estimates of the coefficient matrices A (n x n) and the noise covariance matrix C (n x n). Input matrix B (n x p) encodes the spatial profiles of external inputs u (p x t), estimated using Expectation–Maximization-like algorithm and Lasso regularization from the model residuals. The intercept vector is zero, which assumes that the AR process has zero mean. 
 
